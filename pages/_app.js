@@ -1,4 +1,5 @@
-import Head from "next/head";
+// import { AnimatePresence, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
 import theme from "../components/Styles/Theme";
 import "../components/Styles/FontFace.css";
@@ -37,20 +38,32 @@ const pageStyle = {
   position: "absolute",
 };
 
-export default function Home() {
+const MyApp = ({ Component, pageProps, router }) => {
+  const onExitComplete = () => {
+    if (router.pathname === "/shop") {
+      return;
+    }
+    resetScrollPosition();
+  };
+
   return (
     <ThemeWrapper>
-      <Store.Provider initialState={initialState}></Store.Provider>
-      <div>
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main>
-          <p>Hey world</p>
-        </main>
-      </div>
-      <GlobalStyles />
+      <Store.Provider initialState={initialState}>
+        {/* <AnimatePresence exitBeforeEnter> */}
+        {/* <motion.div */}
+        {/* variants={pageVariants}
+        key={router?.asPath}
+        transition={{ ...pageTransition }}
+        initial="initial"
+        animate="in"
+        exit="out" > */}
+        <Component {...pageProps} />
+        {/* </motion.div> */}
+        {/* </AnimatePresence> */}
+        <GlobalStyles />
+      </Store.Provider>
     </ThemeWrapper>
   );
-}
+};
+
+export default MyApp;

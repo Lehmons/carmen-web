@@ -9,19 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "18.11.9",
-    "@types/react": "18.0.25",
-    "@types/react-dom": "18.0.8",
-    "eslint": "8.26.0",
-    "eslint-config-next": "13.0.2",
-    "immer": "^9.0.16",
-    "next": "13.0.2",
+    "@sanity/block-content-to-react": "^2.0.7",
+    "dayjs": "^1.11.6",
+    "file-loader": "^6.2.0",
+    "framer-motion": "^7.2.1",
+    "groq": "^2.33.2",
+    "immer": "^9.0.15",
+    "next": "12.2.5",
+    "next-sanity": "^0.1.12",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^5.3.6",
-    "typescript": "4.8.4"
+    "styled-components": "^5.3.5",
+    "url-loader": "^4.1.1",
+    "useref": "^1.4.4"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "add": "^2.0.6",
     "babel-plugin-styled-components": "^2.0.7"
   }

@@ -14,7 +14,7 @@ const theme = {
   sitePaddingLeftRightDesktop: "60px",
   sitePaddingLeftRightMobile: "20px",
   sitePaddingTop: "8rem",
-  sitePaddingTopDesktop: "80px",
+  sitePaddingTopDesktop: "8px",
   sitePaddingTopMobile: "48px",
 };
 
