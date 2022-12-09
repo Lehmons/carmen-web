@@ -3,26 +3,38 @@ import HeroStyles from "./Hero.styled";
 import SimpleBlockContent from "../../SimpleBlockContent";
 import ImageBlock from "../../ImageBlock";
 
-export default function Hero({ heroText, featuredProject }) {
+export default function Hero({ heroText, featuredProject, featuredProject2 }) {
   return (
     <HeroStyles>
-      <section>
-        <ImageBlock
-          title={featuredProject?.image?.alt}
-          text={featuredProject?.image?.alt}
-          image={featuredProject?.image}
-          asset={featuredProject?.image?.asset}
-          isThumb={false}
-          hasPaddingBottom={true}
-        />
+      <section className="featuredGrid">
+        <section className="featuredLeft">
+          <ImageBlock
+            title={featuredProject?.image?.alt}
+            text={featuredProject?.image?.alt}
+            image={featuredProject?.image}
+            asset={featuredProject?.image?.asset}
+            isThumb={false}
+            hasPaddingBottom={true}
+          />
+        </section>
+        <section className="featuredRight">
+          <ImageBlock
+            title={featuredProject2?.image?.alt}
+            text={featuredProject2?.image?.alt}
+            image={featuredProject2?.image}
+            asset={featuredProject2?.image?.asset}
+            isThumb={false}
+            hasPaddingBottom={true}
+          />
+        </section>
       </section>
-      {heroText && <SimpleBlockContent blocks={heroText} />}
+      <section className="blurb">
+        {heroText && <SimpleBlockContent blocks={heroText} />}
+      </section>
+      <div className="linebreaker"></div>
     </HeroStyles>
   );
 }
-
-//    Hero section for
-//ft left and ft right
 
 // {featuredProject ? featuredProject.map((featuredProject, i) => {
 //   return (

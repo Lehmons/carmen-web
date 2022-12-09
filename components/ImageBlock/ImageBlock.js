@@ -8,7 +8,6 @@ import useWindowSize from "~/lib/useWindowSize";
 import { urlFor, urlPortraitFor } from "../../lib/sanity";
 
 export default function ImageBlock({
-  title,
   portraitMobileCrop,
   text,
   image,
@@ -118,7 +117,7 @@ export default function ImageBlock({
             height: desktopDimensions?.height,
           })}
           loading={!noLazy ? "lazy" : ""}
-          alt={text || "Cap Awards"}
+          alt={text || "Carmen Dowling"}
         />
       </picture>
     </section>

@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components";
 import theme from "../components/Styles/Theme";
 import "../components/Styles/FontFace.css";
 import Store from "../stores";
+import Nav from "../components/nav";
 import { initialState as appStore } from "../stores/AppStore";
 import GlobalStyles from "../components/Styles/GlobalStyles";
 
@@ -61,6 +62,7 @@ const MyApp = ({ Component, pageProps, router }) => {
         {/* </motion.div> */}
         {/* </AnimatePresence> */}
         <GlobalStyles />
+        <Nav />
       </Store.Provider>
     </ThemeWrapper>
   );

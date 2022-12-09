@@ -24,7 +24,7 @@ const font = {
   h2Tablet: "54px",
   h2Mobile: "36px",
   p: "3.2rem",
-  pLineHeight: "4.1",
+  pLineHeight: "1.4",
   pMobile: "22px",
   pInputMobile: "16px",
   smallP: "2rem",

@@ -93,7 +93,6 @@ const GlobalStyles = createGlobalStyle`
 ul {
 		font-size: ${font.p};
 		line-height: 2.9rem;
-		text-transform: uppercase;
     ${media.smallDesktopAndBelow`
       font-size: ${font.pMobile};
 			line-height: 29px;
@@ -116,12 +115,7 @@ ul {
 		height: 10px;
 		top: 10px;
 		left: 2px;
-		background: ${(props) => props.theme.blue};
 		transform: rotate(-45deg);
-		${media.tabletPortraitAndBelow`
-      background: white;
-			border: 1px solid ${(props) => props.theme.blue};
-    `}
 	}
 
 	

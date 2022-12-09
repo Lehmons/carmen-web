@@ -12,7 +12,7 @@ export default function Home({
   FeaturedprojectLink,
   FeaturedprojectLink2,
   featuredProject,
-  featuredProject1,
+  featuredProject2,
   projects,
   heroText,
 }) {
@@ -34,12 +34,18 @@ export default function Home({
         FeaturedprojectLink={FeaturedprojectLink}
         FeaturedprojectLink2={FeaturedprojectLink2}
         featuredProject={featuredProject}
-        featuredProject1={featuredProject1}
+        featuredProject2={featuredProject2}
       />
       <section className="project-feed">
         {projects
           ? projects.map((project, i) => (
               <section key={i} className="project-tile">
+                {project?.linkedPage?.title && (
+                  <h2>{project?.linkedPage?.title}</h2>
+                )}
+                {project?.linkedPage?.blurb && (
+                  <p>{project?.linkedPage?.blurb}</p>
+                )}
                 {project?.linkedPage?.featuredImage && (
                   <ImageBlock
                     title={project?.linkedPage?.featuredImage?.image?.alt}
@@ -49,12 +55,6 @@ export default function Home({
                     isThumb={false}
                     hasPaddingBottom={true}
                   />
-                )}
-                {project?.linkedPage?.title && (
-                  <h2>{project?.linkedPage?.title}</h2>
-                )}
-                {project?.linkedPage?.blurb && (
-                  <p>{project?.linkedPage?.blurb}</p>
                 )}
               </section>
             ))
