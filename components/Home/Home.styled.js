@@ -20,11 +20,16 @@ const HomeStyles = styled(motion.section)`
 
   .project-tile {
     width: 100%;
+    height: 102rem;
     padding-top: 4rem;
-    padding-bottom: 4rem;
+    border-bottom: 1px solid black;
   }
 
-  .project-feed img {
+  .project-tile .image-wrapper {
+    padding-top: 3rem;
+  }
+
+  .image-wrapper img {
     border-radius: 20px;
   }
 `;

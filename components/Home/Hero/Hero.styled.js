@@ -36,8 +36,8 @@ const HeroStyles = styled.section`
   }
 
   .linebreaker {
+    padding-top: 3.5rem;
     border-bottom: 1px solid black;
-    padding-bottom: 3.5rem;
   }
 `;
 

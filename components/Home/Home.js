@@ -40,22 +40,24 @@ export default function Home({
         {projects
           ? projects.map((project, i) => (
               <section key={i} className="project-tile">
-                {project?.linkedPage?.title && (
+                {/* {project?.linkedPage?.title && (
                   <h2>{project?.linkedPage?.title}</h2>
-                )}
+                )} */}
                 {project?.linkedPage?.blurb && (
                   <p>{project?.linkedPage?.blurb}</p>
                 )}
-                {project?.linkedPage?.featuredImage && (
-                  <ImageBlock
-                    title={project?.linkedPage?.featuredImage?.image?.alt}
-                    text={project?.linkedPage?.featuredImage?.image?.alt}
-                    image={project?.linkedPage?.featuredImage?.image}
-                    asset={project?.linkedPage?.featuredImage?.image?.asset}
-                    isThumb={false}
-                    hasPaddingBottom={true}
-                  />
-                )}
+                <section className="image-wrapper">
+                  {project?.linkedPage?.featuredImage && (
+                    <ImageBlock
+                      title={project?.linkedPage?.featuredImage?.image?.alt}
+                      text={project?.linkedPage?.featuredImage?.image?.alt}
+                      image={project?.linkedPage?.featuredImage?.image}
+                      asset={project?.linkedPage?.featuredImage?.image?.asset}
+                      isThumb={false}
+                      hasPaddingBottom={true}
+                    />
+                  )}
+                </section>
               </section>
             ))
           : null}
