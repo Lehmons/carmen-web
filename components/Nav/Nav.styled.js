@@ -45,18 +45,18 @@ const NavStyled = styled.section`
     `}
   }
 
-  .WorkAbout .projects {
+  .work-about .work {
     margin-right: 5.7rem;
     ${media.smallDesktopAndBelow`
-    marign-right: 57px;
+    margin-right: 57px;
 	`}
   }
 
-  .WorkAbout .about {
+  .work-about .about {
     margin-right: 6.7rem;
     ${media.smallDesktopAndBelow`
-    marign-left:  67px;
-	`}
+      margin-left:  67px;
+    `}
   }
 `;
 

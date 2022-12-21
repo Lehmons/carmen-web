@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import HomeStyles from "./Home.styled";
 import SimpleBlockContent from "../SimpleBlockContent";
+import ConditionalWrapper from "../ConditionalWrapper";
 import Hero from "./Hero";
 import ImageBlock from "../ImageBlock";
+import Link from "next/link";
 // import { motion } from "framer-motion";
 
 export default function Home({
   pageTransition,
   pageVariants,
   pageStyle,
-  FeaturedprojectLink,
-  FeaturedprojectLink2,
+  featuredProjectLink,
+  featuredProjectLink2,
   featuredProject,
   featuredProject2,
   projects,
@@ -31,8 +33,8 @@ export default function Home({
     feed page */}
       <Hero
         heroText={heroText}
-        FeaturedprojectLink={FeaturedprojectLink}
-        FeaturedprojectLink2={FeaturedprojectLink2}
+        featuredProjectLink={featuredProjectLink}
+        featuredProjectLink2={featuredProjectLink2}
         featuredProject={featuredProject}
         featuredProject2={featuredProject2}
       />
@@ -40,24 +42,38 @@ export default function Home({
         {projects
           ? projects.map((project, i) => (
               <section key={i} className="project-tile">
-                {/* {project?.linkedPage?.title && (
-                  <h2>{project?.linkedPage?.title}</h2>
-                )} */}
-                {project?.linkedPage?.blurb && (
-                  <p>{project?.linkedPage?.blurb}</p>
-                )}
-                <section className="image-wrapper">
-                  {project?.linkedPage?.featuredImage && (
-                    <ImageBlock
-                      title={project?.linkedPage?.featuredImage?.image?.alt}
-                      text={project?.linkedPage?.featuredImage?.image?.alt}
-                      image={project?.linkedPage?.featuredImage?.image}
-                      asset={project?.linkedPage?.featuredImage?.image?.asset}
-                      isThumb={false}
-                      hasPaddingBottom={true}
-                    />
+                <ConditionalWrapper
+                  condition={project?.linkedPage?.slug?.current}
+                  wrap={(children) => (
+                    <Link
+                      href={`${project?.linkedPage?.slug?.current}`}
+                      scroll={false}
+                    >
+                      <a>{children}</a>
+                    </Link>
                   )}
-                </section>
+                >
+                  {project?.linkedPage?.blurb && (
+                    <p>{project?.linkedPage?.blurb}</p>
+                  )}
+                  {project?.linkedPage?.blurbLineTwo && (
+                    <p className="indent">
+                      {project?.linkedPage?.blurbLineTwo}
+                    </p>
+                  )}
+                  <section className="image-wrapper">
+                    {project?.linkedPage?.featuredImage && (
+                      <ImageBlock
+                        title={project?.linkedPage?.featuredImage?.image?.alt}
+                        text={project?.linkedPage?.featuredImage?.image?.alt}
+                        image={project?.linkedPage?.featuredImage?.image}
+                        asset={project?.linkedPage?.featuredImage?.image?.asset}
+                        isThumb={false}
+                        hasPaddingBottom={true}
+                      />
+                    )}
+                  </section>
+                </ConditionalWrapper>
               </section>
             ))
           : null}

@@ -12,8 +12,10 @@
 
 const font = {
   family100:
-    "Neue-MontrealRegular, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
-  titleLineHeight: "0.8",
+    "NeueMontreal, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif",
+  family200:
+    "EditorialNew, TimesNewRoman,Times New Roman,Times,Baskerville,Georgia,serif",
+  titleLineHeight: "1.2",
   stat: "6.8rem",
   statTablet: "68px",
   statMobile: "48px",

@@ -35,9 +35,23 @@ const HeroStyles = styled.section`
     width: 100%;
   }
 
+  .blurb p {
+    font-size: ${font.h2};
+    line-height: ${font.titleLineHeight};
+    ${media.smallDesktopAndBelow`
+      font-size: ${font.h2Tablet};
+    `}
+    ${media.tabletPortraitAndBelow`
+      font-size: ${font.h2Mobile};
+    `};
+  }
+
   .linebreaker {
     padding-top: 3.5rem;
     border-bottom: 1px solid black;
+    ${media.minDevicePixelRatio2`
+      border-width: 0.5px;
+    `}
   }
 `;
 

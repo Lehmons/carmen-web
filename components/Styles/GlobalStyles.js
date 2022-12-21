@@ -32,6 +32,11 @@ const GlobalStyles = createGlobalStyle`
 		font-family: ${font.family100};
   }
 
+	strong {
+		font-family: ${font.family200};
+		font-weight: normal;
+	}
+
 	html, body{
 		font-size:  ${(props) =>
       (props.theme.baseline * 100) / props.theme.viewport}vmax;

@@ -1,7 +1,15 @@
 @font-face {
-  font-family: "Neue-MontrealRegular";
-  src: url("/public/fonts/Neue-MontrealRegular.woff2") format("woff2"),
-    url("/fonts/Neue-Montreal-Regular.woff") format("woff");
+  font-family: "NeueMontreal";
+  src: url("/public/fonts/NeueMontreal.woff2") format("woff2"),
+    url("/fonts/NeueMontreal.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "EditorialNew";
+  src: url("/public/fonts/EditorialNew.woff2") format("woff2"),
+    url("/fonts/EditorialNew.woff") format("woff");
   font-style: normal;
   font-weight: normal;
 }
