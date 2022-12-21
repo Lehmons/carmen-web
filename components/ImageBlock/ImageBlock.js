@@ -1,6 +1,5 @@
 import React, { useState, Fragment, useRef, useEffect } from "react";
 import ImageBlockStyles from "./ImageBlock.styled";
-import imageUrlBuilder from "@sanity/image-url";
 import Link from "next/link";
 import SimpleBlockContent from "../SimpleBlockContent";
 import useWindowSize from "~/lib/useWindowSize";
@@ -12,7 +11,6 @@ export default function ImageBlock({
   text,
   image,
   slug,
-  isThumb,
   asset,
   noLazy,
   caption,
