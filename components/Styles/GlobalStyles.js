@@ -28,6 +28,7 @@ const GlobalStyles = createGlobalStyle`
 	}
 
   body {
+		background: ${(props) => props.theme.grey100};
     font-weight: 400;
 		font-family: ${font.family100};
   }
@@ -47,6 +48,7 @@ const GlobalStyles = createGlobalStyle`
 	a {
 		outline: 0;
 		text-decoration: none;
+		color: black;
 	}
 
 	ul{

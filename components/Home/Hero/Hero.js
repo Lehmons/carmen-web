@@ -12,7 +12,6 @@ export default function Hero({
   featuredProjectLink,
   featuredProjectLink2,
 }) {
-  console.log(featuredProjectLink);
   return (
     <HeroStyles>
       <section className="featuredGrid">

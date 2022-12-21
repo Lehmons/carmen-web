@@ -4,7 +4,9 @@ import SimpleBlockContent from "../SimpleBlockContent";
 import ConditionalWrapper from "../ConditionalWrapper";
 import Hero from "./Hero";
 import ImageBlock from "../ImageBlock";
+import Footer from "../Footer";
 import Link from "next/link";
+import Head from "next/head";
 // import { motion } from "framer-motion";
 
 export default function Home({
@@ -29,6 +31,9 @@ export default function Home({
       transition={pageTransition}
       className="page home"
     >
+      <Head>
+        <title>Home | Carmen Dowling</title>
+      </Head>
       {/* about page 
     feed page */}
       <Hero
@@ -78,6 +83,7 @@ export default function Home({
             ))
           : null}
       </section>
+      <Footer />
     </HomeStyles>
   );
 }

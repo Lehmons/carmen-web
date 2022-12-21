@@ -30,7 +30,48 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/images/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/images/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/images/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/images/site.webmanifest" />
+          <link
+            rel="mask-icon"
+            href="/images/safari-pinned-tab.svg"
+            color="#5bbad5"
+          />
+          <meta name="msapplication-TileColor" content="#ffffff" />
+          <meta name="theme-color" content="#ffffff" />
+          <link
+            rel="preload"
+            href="/fonts/EditorialNew.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="true"
+          />
+          <meta property="og:locale" content="en_GB" />
+          <meta property="og:title" content="Carmen Dowling" />
+          <meta property="og:description" content="Carmen Dowling" />
+          <meta property="og:url" content="https://carmendowling.com" />
+          <meta property="og:site_name" content="Carmen Dowling" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:description" content="Carmen Dowling" />
+          <meta name="twitter:title" content="Carmen Dowling" />
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -1,5 +1,6 @@
 const theme = {
   black: "#000",
+  grey100: "#E5E5E5",
   selectionHighlightColor: "#f8f6f3",
   selectionColor: "white",
   error: "hsla(0,100%,50%,1)",

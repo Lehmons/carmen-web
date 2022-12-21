@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const AboutStyles = styled(motion.section)`
   margin-top: ${(props) => props.theme.sitePaddingTop};
   ${media.smallDesktopAndBelow`
-  width: 100%
+  width: 100%;
   padding-top: 8rem;
 	`}
   ${media.tabletPortraitAndBelow`
@@ -55,12 +55,17 @@ const AboutStyles = styled(motion.section)`
   .get-in-touch > p,
   .get-in-touch > div,
   .heroText > p,
+  footer,
   .heroText > div {
-    margin-left: ${(props) => props.theme.sitePaddingLeftRight};
-    margin-right: ${(props) => props.theme.sitePaddingLeftRight};
+    padding-left: ${(props) => props.theme.sitePaddingLeftRight};
+    padding-right: ${(props) => props.theme.sitePaddingLeftRight};
     ${media.smallDesktopAndBelow`
-      margin-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
-      margin-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};
+      padding-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
+      padding-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};
+    `}
+    ${media.tabletPortraitAndBelow`
+      padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
+      padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
     `}
   }
 
@@ -69,8 +74,16 @@ const AboutStyles = styled(motion.section)`
     align-items: center;
     justify-content: center;
     padding: 8rem 0;
+    ${media.smallDesktopAndBelow`
+      padding: 80px ${(props) => props.theme.sitePaddingLeftRightDesktop};
+    `}
+    ${media.tabletLandscapeAndBelow`
+      justify-content: flex-start;
+
+    `}
     ${media.tabletPortraitAndBelow`
-      padding: 80px 0;
+      padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
+      padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
     `}
   }
 
@@ -79,6 +92,13 @@ const AboutStyles = styled(motion.section)`
     grid-template-columns: repeat(2, 1fr);
     column-gap: 7.2rem;
     padding-top: 2.4rem;
+    ${media.smallDesktopAndBelow`
+      column-gap: 72px;
+      padding-top: 24px;
+    `}
+    ${media.tabletLandscapeAndBelow`
+      grid-template-columns: repeat(1, 1fr);
+    `}
   }
 
   .get-in-touch {

@@ -2,14 +2,15 @@
 // Home
 // ****************************************/
 
+import Head from "next/head";
 import styled from "styled-components";
 import { font, media, underline } from "../Styles";
 import { motion } from "framer-motion";
 
 const HomeStyles = styled(motion.section)`
-  margin-top: ${(props) => props.theme.sitePaddingTop};
-  margin-left: ${(props) => props.theme.sitePaddingLeftRight};
-  margin-right: ${(props) => props.theme.sitePaddingLeftRight};
+  padding-top: ${(props) => props.theme.sitePaddingTop};
+  padding-left: ${(props) => props.theme.sitePaddingLeftRight};
+  padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   ${media.smallDesktopAndBelow`
   width: 100%
   padding-top: 8rem;

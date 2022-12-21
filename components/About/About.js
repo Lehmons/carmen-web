@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import AboutStyles from "./About.styled";
 import SimpleBlockContent from "../SimpleBlockContent";
+import Footer from "../Footer";
+import Head from "next/head";
 
 export default function About({
   pageTransition,
@@ -23,6 +25,9 @@ export default function About({
       transition={pageTransition}
       className="page about"
     >
+      <Head>
+        <title>About | Carmen Dowling</title>
+      </Head>
       {heroText && (
         <section className="heroText">
           <SimpleBlockContent blocks={heroText} />
@@ -51,6 +56,7 @@ export default function About({
           <SimpleBlockContent blocks={getInTouch} />
         </section>
       )}
+      <Footer />
     </AboutStyles>
   );
 }
