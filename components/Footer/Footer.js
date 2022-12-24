@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import FooterStyles from "./Footer.styled";
-import Link from "next/link";
 import { groq } from "next-sanity";
 import { getClient } from "../../lib/sanity.server";
 
@@ -15,7 +14,8 @@ export default function Footer() {
   const setup = async () => {
     const newData = await getClient(preview).fetch(query); // fetches the data
     if (!newData) {
-      setData(newData); // set data if it's returned
+      return;
+      // setData(newData); set data if it's returned
     }
   };
 
