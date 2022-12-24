@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FooterStyles from "./Footer.styled";
+import Link from "next/link";
 import { groq } from "next-sanity";
 import { getClient } from "../../lib/sanity.server";
 
@@ -13,9 +14,8 @@ export default function Footer() {
 
   const setup = async () => {
     const newData = await getClient(preview).fetch(query); // fetches the data
-    if (!newData) {
-      return;
-      // setData(newData); set data if it's returned
+    if (newData) {
+      setData(newData); // set data if it's returned
     }
   };
 
@@ -32,11 +32,13 @@ export default function Footer() {
       <section className="site-name">
         <p>&copy; {data?.siteName}</p>
       </section>
-      <section>
+      <section className="social-links">
         {data?.socialLinks?.map((item, i) => (
-          <a key={i} href={item?.link} target="_blank" rel="noopener">
-            {item?.title}
-          </a>
+          <Link>
+            <a key={i} href={item?.link} target="_blank" rel="noopener">
+              {item?.title}
+            </a>
+          </Link>
         ))}
       </section>
     </FooterStyles>
