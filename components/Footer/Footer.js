@@ -14,7 +14,7 @@ export default function Footer() {
 
   const setup = async () => {
     const newData = await getClient(preview).fetch(query); // fetches the data
-    if (newData) {
+    if (!newData) {
       setData(newData); // set data if it's returned
     }
   };
