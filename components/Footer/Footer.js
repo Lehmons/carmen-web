@@ -35,7 +35,13 @@ export default function Footer() {
       <section className="social-links">
         {data?.socialLinks?.map((item, i) => (
           <Link>
-            <a key={i} href={item?.link} target="_blank" rel="noopener">
+            <a
+              className="cta"
+              key={i}
+              href={item?.link}
+              target="_blank"
+              rel="noopener, nofollow"
+            >
               {item?.title}
             </a>
           </Link>
