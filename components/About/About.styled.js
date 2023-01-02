@@ -104,6 +104,13 @@ const AboutStyles = styled(motion.section)`
   .get-in-touch {
     padding-top: 5.7rem;
   }
+
+  footer {
+    padding-top: 24rem;
+  }
+  ${media.smallDesktopAndBelow`
+      padding-top: 240px;
+    `}
 `;
 
 export default AboutStyles;

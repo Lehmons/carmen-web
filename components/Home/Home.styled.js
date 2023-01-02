@@ -39,6 +39,10 @@ const HomeStyles = styled(motion.section)`
     color: black;
   }
 
+  .project-tile img {
+    border-radius: 20px;
+  }
+
   .project-tile .image-wrapper {
     padding-top: 3rem;
   }
@@ -51,10 +55,6 @@ const HomeStyles = styled(motion.section)`
     ${media.tabletLandscapeAndBelow`
       padding-left: 30px;
     `}
-  }
-
-  .image-wrapper img {
-    border-radius: 20px;
   }
 `;
 

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { font, media, underline } from "../../Styles";
 
 const SingleImageStyles = styled.section`
+  width: 100%;
   &.is-small,
   &.is-medium {
     margin-left: auto;
@@ -41,6 +42,10 @@ const SingleImageStyles = styled.section`
       padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
       padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
     `}
+  }
+
+  .image-block img {
+    border-radius: 20px;
   }
 `;
 

@@ -7,6 +7,17 @@ import { font, media, underline } from "../Styles";
 import { motion } from "framer-motion";
 
 const ProjectStyles = styled(motion.section)`
+  padding-top: ${(props) => props.theme.sitePaddingTop};
+  padding-left: ${(props) => props.theme.sitePaddingLeftRight};
+  padding-right: ${(props) => props.theme.sitePaddingLeftRight};
+  ${media.smallDesktopAndBelow`
+  width: 100%
+  padding-top: 8rem;
+	`}
+  ${media.tabletPortraitAndBelow`
+  padding-top: 80px;
+`}
+
   .description {
     padding: 13rem ${(props) => props.theme.sitePaddingLeftRight};
     border-bottom: 1px solid black;

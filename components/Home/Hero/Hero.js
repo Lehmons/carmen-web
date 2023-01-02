@@ -67,14 +67,3 @@ export default function Hero({
     </HeroStyles>
   );
 }
-
-// {featuredProject ? featuredProject.map((featuredProject, i) => {
-//   return (
-//     <FeaturedProject
-//     key={i}
-//     slug={featuredProject?.slug}
-//     images={featuredProject?.images}
-//     />
-//   );
-// })
-// :null}

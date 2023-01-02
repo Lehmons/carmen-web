@@ -12,8 +12,6 @@ export default function About({
   getInTouch,
   twoColumnTextBlock,
 }) {
-  console.log(twoColumnTextBlock);
-
   return (
     <AboutStyles
       key={"about"}
