@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import HomeStyles from "./Home.styled";
-import SimpleBlockContent from "../SimpleBlockContent";
 import ConditionalWrapper from "../ConditionalWrapper";
 import Hero from "./Hero";
 import ImageBlock from "../ImageBlock";

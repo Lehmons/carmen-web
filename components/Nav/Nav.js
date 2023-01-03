@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import NavStyled from "./nav.styled";
+import NavStyled from "./Nav.styled";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
