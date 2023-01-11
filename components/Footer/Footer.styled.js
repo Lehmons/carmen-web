@@ -9,6 +9,8 @@ const FooterStyles = styled.footer`
   display: flex;
   padding: 4.5rem 0;
   justify-content: space-between;
+  padding-left: ${(props) => props.theme.sitePaddingLeftRight};
+  padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   ${media.smallDesktopAndBelow`
     padding: 45px 0;
   `}
