@@ -18,12 +18,12 @@ const NavStyled = styled.nav`
   background: linear-gradient(
     top,
     rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 110%
+    rgba(255, 255, 255, 0) 120%
   );
   background: linear-gradient(
     to bottom,
-    rgba(255, 255, 255, 1) 5%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 110%
   );
 
   ${media.smallDesktopAndBelow`

@@ -24,8 +24,6 @@ const HomeStyles = styled(motion.section)`
     border-bottom: 1px solid black;
     display: grid;
     grid-template-columns: repeat(1, fr);
-    padding-left: ${(props) => props.theme.sitePaddingLeftRight};
-    padding-right: ${(props) => props.theme.sitePaddingLeftRight};
     ${media.smallDesktopAndBelow`
       padding-top: 39px;
       padding-bottom: 50px;

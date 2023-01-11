@@ -8,8 +8,7 @@ import { motion } from "framer-motion";
 
 const ProjectStyles = styled(motion.section)`
   padding-top: ${(props) => props.theme.sitePaddingTop};
-  padding-left: ${(props) => props.theme.sitePaddingLeftRight};
-  padding-right: ${(props) => props.theme.sitePaddingLeftRight};
+
   ${media.smallDesktopAndBelow`
   width: 100%
   padding-top: 8rem;
