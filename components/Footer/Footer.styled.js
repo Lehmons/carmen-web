@@ -46,7 +46,7 @@ const FooterStyles = styled.footer`
       margin-left: 51px;
     `}
     ${media.tabletPortraitAndBelow`
-      margin-left: 20px;
+      margin-left: 15px;
     `};
   }
 

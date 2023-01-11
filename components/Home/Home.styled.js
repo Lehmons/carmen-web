@@ -46,8 +46,6 @@ const HomeStyles = styled(motion.section)`
 
   .project-tile img {
     border-radius: 20px;
-    padding-left: ${(props) => props.theme.sitePaddingLeftRight};
-    padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   }
 
   .project-tile .image-wrapper {

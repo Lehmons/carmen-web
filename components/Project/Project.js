@@ -70,6 +70,13 @@ export default function Project({
               </section>
             );
           }
+          if (item?._type == "caption") {
+            return (
+              <section className="caption" key={i}>
+                {item?.text && <SimpleBlockContent blocks={item?.text} />}
+              </section>
+            );
+          }
           return null;
         })}
       </section>
