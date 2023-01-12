@@ -7,6 +7,7 @@ import Store from "../stores";
 import Nav from "../components/Nav";
 import { initialState as appStore } from "../stores/AppStore";
 import GlobalStyles from "../components/Styles/GlobalStyles";
+import scrollToWithCb from '../lib/Utils/scrollToWithCb';
 
 // Build initial state
 const initialState = {
@@ -41,11 +42,33 @@ const pageStyle = {
 
 const MyApp = ({ Component, pageProps, router }) => {
   const onExitComplete = () => {
-    if (router.pathname === "/shop") {
+    if (router.pathname === "/" || router.pathname === "/work/*") {
       return;
     }
     resetScrollPosition();
   };
+
+  const initRouterListeners = () => {
+    const routes = [];
+
+    router.events.on("routeChangeStart", (url) => {
+      pushCurrentRouteInfo();
+    });
+
+    function pushCurrentRouteInfo() {
+      const { scrollY } = window;
+      routes.push({ pathname: router.pathname, scrollY });
+    }
+  };
+
+  const resetScrollPosition = () => {
+    scrollToWithCb({ top: 0, left: 0 });
+  };
+
+  useEffect(() => {
+    initRouterListeners();
+    resetScrollPosition();
+  }, []);
 
   return (
     <ThemeWrapper>
