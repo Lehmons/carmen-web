@@ -13,7 +13,6 @@ export default function SingleImage({ image, margin, size, caption }) {
         text={image?.image?.alt}
         image={image?.image}
         asset={image?.image?.asset}
-        // caption={caption?.text}
         isThumb={false}
         hasPaddingBottom={true}
       />
