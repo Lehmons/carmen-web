@@ -15,20 +15,7 @@ const NavStyled = styled.nav`
   width: 100%;
   z-index: 3;
   background: ${(props) => props.theme.grey100};
-  background: linear-gradient(
-    top,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 120%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 110%
-  );
-
-  ${media.smallDesktopAndBelow`
-
-	`}
+  background: linear-gradient(180deg, #F3F3F3 0%, rgba(255, 255, 255, 0) 100%);
 
   .logo,
   .projects,

@@ -22,6 +22,12 @@ const HeroStyles = styled.section`
     width: 100%;
     height: 100%;
     max-width: 640rem;
+		padding-left: ${props => props.theme.sitePaddingLeftRight};
+		padding-right: ${props => props.theme.sitePaddingLeftRight};
+		${media.smallDesktopAndBelow`
+			padding-left: ${props => props.theme.sitePaddingLeftRightDesktop};
+			padding-right: ${props => props.theme.sitePaddingLeftRightDesktop};
+		`}
   }
 
   .featuredGrid img {
@@ -31,8 +37,11 @@ const HeroStyles = styled.section`
   }
 
   .blurb {
-    padding-top: 5rem;
+    padding-top: 7.2rem;
     width: 100%;
+		${media.smallDesktopAndBelow`
+			padding-top: 72px;
+		`}
   }
 
   .blurb p {

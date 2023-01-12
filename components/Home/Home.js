@@ -4,6 +4,7 @@ import ConditionalWrapper from "../ConditionalWrapper";
 import Hero from "./Hero";
 import ImageBlock from "../ImageBlock";
 import Footer from "../Footer";
+import SectionFadeIn from "../SectionFadeIn";
 import Link from "next/link";
 import Head from "next/head";
 // import { motion } from "framer-motion";
@@ -33,8 +34,6 @@ export default function Home({
       <Head>
         <title>Home | Carmen Dowling</title>
       </Head>
-      {/* about page 
-    feed page */}
       <Hero
         heroText={heroText}
         featuredProjectLink={featuredProjectLink}
@@ -66,16 +65,18 @@ export default function Home({
                     </p>
                   )}
                   <section className="image-wrapper">
-                    {project?.linkedPage?.featuredImage && (
-                      <ImageBlock
-                        title={project?.linkedPage?.featuredImage?.image?.alt}
-                        text={project?.linkedPage?.featuredImage?.image?.alt}
-                        image={project?.linkedPage?.featuredImage?.image}
-                        asset={project?.linkedPage?.featuredImage?.image?.asset}
-                        isThumb={false}
-                        hasPaddingBottom={true}
-                      />
-                    )}
+										<SectionFadeIn>
+											{project?.linkedPage?.featuredImage && (
+												<ImageBlock
+													title={project?.linkedPage?.featuredImage?.image?.alt}
+													text={project?.linkedPage?.featuredImage?.image?.alt}
+													image={project?.linkedPage?.featuredImage?.image}
+													asset={project?.linkedPage?.featuredImage?.image?.asset}
+													isThumb={false}
+													hasPaddingBottom={true}
+												/>
+											)}
+										</SectionFadeIn>
                   </section>
                 </ConditionalWrapper>
               </section>

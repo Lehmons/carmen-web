@@ -7,6 +7,7 @@ import Head from "next/head";
 import SimpleBlockContent from "../SimpleBlockContent";
 import Footer from "../Footer";
 import NextProject from "./NextProject";
+import SectionFadeIn from '../SectionFadeIn';
 
 export default function Project({
   pageTransition,
@@ -51,17 +52,19 @@ export default function Project({
       <section className="blocks">
         {blocks?.map((item, i) => {
           if (item?._type == "imageGrid") {
-            return <ImageGrid images={item?.images} key={i} />;
+            return <SectionFadeIn><ImageGrid images={item?.images} key={i} /></SectionFadeIn>;
           }
           if (item?._type == "singleImage") {
             return (
-              <SingleImage
-                image={item?.image}
-                margin={item?.margin}
-                size={item?.size}
-                caption={item?.caption}
-                key={i}
-              />
+              <SectionFadeIn>
+								<SingleImage
+									image={item?.image}
+									margin={item?.margin}
+									size={item?.size}
+									caption={item?.caption}
+									key={i}
+								/>
+							</SectionFadeIn>
             );
           }
           if (item?._type == "projectText") {
@@ -74,7 +77,7 @@ export default function Project({
           if (item?._type == "caption") {
             return (
               <section className="caption" key={i}>
-                {item?.text && <SimpleBlockContent blocks={item?.text} />}
+                	{item?.text && <SimpleBlockContent blocks={item?.text} />}
               </section>
             );
           }

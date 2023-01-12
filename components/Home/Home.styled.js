@@ -49,7 +49,10 @@ const HomeStyles = styled(motion.section)`
   }
 
   .project-tile .image-wrapper {
-    padding-top: 3rem;
+    padding-top: 4rem;
+		${media.smallDesktopAndBelow`
+			padding-top: 40px;
+		`}
   }
 
   .project-tile .indent {

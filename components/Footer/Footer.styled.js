@@ -7,10 +7,8 @@ import { font, media, underline } from "../Styles";
 
 const FooterStyles = styled.footer`
   display: flex;
-  padding: 4.5rem 0;
+  padding: 9rem ${(props) => props.theme.sitePaddingLeftRight} 4.5rem ${(props) => props.theme.sitePaddingLeftRight} ;
   justify-content: space-between;
-  padding-left: ${(props) => props.theme.sitePaddingLeftRight};
-  padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   ${media.smallDesktopAndBelow`
       padding-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
       padding-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};

@@ -9,12 +9,12 @@ import { motion } from "framer-motion";
 const AboutStyles = styled(motion.section)`
   margin-top: ${(props) => props.theme.sitePaddingTop};
   ${media.smallDesktopAndBelow`
-  width: 100%;
-  padding-top: 8rem;
+  	width: 100%;
+  	margin-top: ${(props) => props.theme.sitePaddingTopDesktop};
 	`}
   ${media.tabletPortraitAndBelow`
-  padding-top: 80px;
-`}  
+  	padding-top: 80px;
+	`}  
 
   a {
     color: black;
@@ -22,10 +22,10 @@ const AboutStyles = styled(motion.section)`
 
   .heroText {
     width: 100%;
-    padding-top: 2.3rem;
+    padding-top: 4.3rem;
     padding-bottom: 5rem;
     ${media.tabletPortraitAndBelow`
-      padding-top: 23px;
+      padding-top: 43px;
       padding-bottom: 50px;
   `}
   }

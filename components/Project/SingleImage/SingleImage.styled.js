@@ -47,6 +47,10 @@ const SingleImageStyles = styled.section`
   .image-block img {
     border-radius: 20px;
   }
+
+	&.is-large img {
+		border-radius: initial;
+	}
 `;
 
 export default SingleImageStyles;
