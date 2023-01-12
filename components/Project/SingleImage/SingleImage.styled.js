@@ -51,6 +51,62 @@ const SingleImageStyles = styled.section`
 	&.is-large img {
 		border-radius: initial;
 	}
+
+	.caption {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&.is-large .caption {
+		max-width: 131.2rem;
+		${media.smallDesktopAndBelow`
+			max-width: 1312px;
+		`}
+	}
+
+	&.is-medium .caption {
+		max-width: 108.4rem;
+		${media.smallDesktopAndBelow`
+			max-width: 1084px;
+			padding-top: 48px;
+		`}
+	}
+
+	&.is-small .caption {
+		max-width: 85.8rem;
+		${media.smallDesktopAndBelow`
+			max-width: 858px;
+		`}
+	}
+
+	&.is-medium .caption,
+	&.is-large .caption {
+		padding-top: 4.8rem;
+		${media.smallDesktopAndBelow`
+			padding-top: 48px;
+		`}
+	}
+
+	&.is-large .caption p {
+		font-size: ${font.h3};
+		font-family: ${font.family200};
+		line-height: ${font.titleLineHeight};
+		padding-top: 11rem;
+		${media.smallDesktopAndBelow`
+			padding-top: 110px;
+			font-size: ${font.h3Tablet};
+		`}
+		${media.tabletPortraitAndBelow`
+			font-size: ${font.h3Mobile};
+		`}
+	}
+
+	&.is-small .caption p{
+		max-width: 85.8rem;
+		${media.smallDesktopAndBelow`
+			max-width: 858px;
+		`}
+	}
 `;
 
 export default SingleImageStyles;

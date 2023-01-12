@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SingleImageStyles from "./SingleImage.styled";
 import ImageBlock from "../../ImageBlock";
-// import SimpleBlockContent from "../SimpleBlockContent";
+import SimpleBlockContent from "../../SimpleBlockContent";
 
 export default function SingleImage({ image, margin, size, caption }) {
   return (
@@ -17,11 +17,11 @@ export default function SingleImage({ image, margin, size, caption }) {
         isThumb={false}
         hasPaddingBottom={true}
       />
-      {/* {caption && (
+      {caption && (
         <section className="caption">
           <SimpleBlockContent blocks={caption} />
         </section>
-      )} */}
+      )}
     </SingleImageStyles>
   );
 }
