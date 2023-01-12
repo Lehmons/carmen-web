@@ -55,6 +55,7 @@ export default function SectionFadeIn(props) {
       className={`${isVisible ? "is-visible" : "is-hidden"} ${
         props.className || ""
       }`}
+			onClick={props?.onClick}
     >
       <section ref={containerRef}>{elements}</section>
     </SectionFadeInStyles>

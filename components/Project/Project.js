@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProjectStyles from "./Project.styled";
 import ImageBlock from "../ImageBlock";
 import ImageGrid from "./ImageGrid";
@@ -8,6 +8,7 @@ import SimpleBlockContent from "../SimpleBlockContent";
 import Footer from "../Footer";
 import NextProject from "./NextProject";
 import SectionFadeIn from "../SectionFadeIn";
+import Lightbox from './Lightbox';
 
 export default function Project({
   pageTransition,
@@ -21,6 +22,39 @@ export default function Project({
   credits,
   _id,
 }) {
+	const [activeIndex, setActiveIndex] = useState();
+	const [images, setImages] = useState();
+	const [isLightboxActive, setIsLightboxActive] = useState(false);
+
+	const setupImages = () => {
+		const arr = [featuredImage];
+		blocks.map(item => {
+			if(item?._type == 'singleImage'){
+				arr.push(item?.image);	
+			}
+			if(item?._type == 'imageGrid'){
+				arr.push(...item?.images);	
+			}
+		});
+		setImages(arr);
+	};
+
+	const onImageClick = (e, i) => {
+		e?.preventDefault();
+		const nextActiveIndex = i + 1;
+		setActiveIndex(nextActiveIndex);
+	}
+
+	useEffect(()=> {
+	 setupImages();
+	}, []);
+
+	useEffect(()=> {
+	 if(activeIndex !== undefined){
+		setIsLightboxActive(true);
+	 }
+	}, [activeIndex]);
+
   return (
     <ProjectStyles
       key="project"
@@ -35,14 +69,16 @@ export default function Project({
       <Head>
         <title>{title ? title : "Project"} | Carmen Dowling</title>
       </Head>
-      <ImageBlock
-        title={featuredImage?.image?.alt}
-        text={featuredImage?.image?.alt}
-        image={featuredImage?.image}
-        asset={featuredImage?.image?.asset}
-        isThumb={false}
-        hasPaddingBottom={true}
-      />
+			<section className="featured-image" onClick={e => onImageClick(e, -1)}>
+				<ImageBlock
+					title={featuredImage?.image?.alt}
+					text={featuredImage?.image?.alt}
+					image={featuredImage?.image}
+					asset={featuredImage?.image?.asset}
+					isThumb={false}
+					hasPaddingBottom={true}
+				/>
+			</section>
       {description && (
         <section className="description">
           <SimpleBlockContent blocks={description} />
@@ -53,14 +89,14 @@ export default function Project({
         {blocks?.map((item, i) => {
           if (item?._type == "imageGrid") {
             return (
-              <SectionFadeIn>
-                <ImageGrid images={item?.images} key={i} />
+              <SectionFadeIn key={i} >
+                <ImageGrid images={item?.images} key={i} onClick={onImageClick} counter={i}/>
               </SectionFadeIn>
             );
           }
           if (item?._type == "singleImage") {
             return (
-              <SectionFadeIn>
+              <SectionFadeIn key={i} onClick={(e) => {onImageClick(e, i)}}>
                 <SingleImage
                   image={item?.image}
                   margin={item?.margin}
@@ -94,6 +130,7 @@ export default function Project({
         </section>
       )}
       <NextProject _id={_id} />
+			<Lightbox images={images} activeIndex={activeIndex} isLightboxActive={isLightboxActive} setIsLightboxActive={setIsLightboxActive} />
       <Footer />
     </ProjectStyles>
   );

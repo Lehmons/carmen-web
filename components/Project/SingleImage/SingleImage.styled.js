@@ -87,13 +87,18 @@ const SingleImageStyles = styled.section`
 		`}
 	}
 
+	&.is-large .caption{
+		padding-top: 12rem;
+		${media.smallDesktopAndBelow`
+			padding-top: 120px;
+		`}
+	}
+
 	&.is-large .caption p {
 		font-size: ${font.h3};
 		font-family: ${font.family200};
 		line-height: ${font.titleLineHeight};
-		padding-top: 11rem;
 		${media.smallDesktopAndBelow`
-			padding-top: 110px;
 			font-size: ${font.h3Tablet};
 		`}
 		${media.tabletPortraitAndBelow`
