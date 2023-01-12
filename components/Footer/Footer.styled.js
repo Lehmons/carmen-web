@@ -12,13 +12,16 @@ const FooterStyles = styled.footer`
   padding-left: ${(props) => props.theme.sitePaddingLeftRight};
   padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   ${media.smallDesktopAndBelow`
-    padding: 45px 0;
+      padding-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
+      padding-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};
   `}
   ${media.tabletLandscapeAndBelow`
     flex-direction: column-reverse;
   `}
   ${media.tabletPortraitAndBelow`
-    padding: 35px 0;
+      padding: 35px 0;
+      padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
+      padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
   `}
 
   & > section:nth-child(1) {

@@ -59,6 +59,7 @@ export default function Project({
                 image={item?.image}
                 margin={item?.margin}
                 size={item?.size}
+                caption={item?.caption}
                 key={i}
               />
             );
@@ -80,6 +81,11 @@ export default function Project({
           return null;
         })}
       </section>
+      {/* {caption && (
+        <section className="caption">
+          <SimpleBlockContent blocks={caption} />
+        </section>
+      )} */}
       {credits && (
         <section className="credits">
           <SimpleBlockContent blocks={credits} />

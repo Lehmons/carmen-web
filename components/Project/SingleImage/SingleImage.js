@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import SingleImageStyles from "./SingleImage.styled";
 import ImageBlock from "../../ImageBlock";
+// import SimpleBlockContent from "../SimpleBlockContent";
 
-export default function SingleImage({ image, margin, size }) {
+export default function SingleImage({ image, margin, size, caption }) {
   return (
     <SingleImageStyles
       className={`single-image is-${size} ${margin ? "has-margin" : ""}`}
