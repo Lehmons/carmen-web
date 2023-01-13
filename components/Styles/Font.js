@@ -27,7 +27,7 @@ const font = {
   h2Mobile: "26px",
 	h3: "4.8rem",
   h3Tablet: "48px",
-  h3Mobile: "22px",
+  h3Mobile: "23px",
   p: "3.2rem",
   pTablet: "32px",
   pLineHeight: "1.4",

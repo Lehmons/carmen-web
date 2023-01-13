@@ -8,6 +8,7 @@ import Nav from "../components/Nav";
 import { initialState as appStore } from "../stores/AppStore";
 import GlobalStyles from "../components/Styles/GlobalStyles";
 import scrollToWithCb from '../lib/Utils/scrollToWithCb';
+import { motion, AnimatePresence } from 'framer-motion';
 
 // Build initial state
 const initialState = {
@@ -33,7 +34,7 @@ const pageVariants = {
 const pageTransition = {
   type: "tween",
   ease: [0.42, 0, 0.58, 1],
-  duration: 0.3,
+  duration: 0.8,
 };
 
 const pageStyle = {
@@ -73,17 +74,18 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <ThemeWrapper>
       <Store.Provider initialState={initialState}>
-        {/* <AnimatePresence exitBeforeEnter> */}
-        {/* <motion.div */}
-        {/* variants={pageVariants}
-        key={router?.asPath}
-        transition={{ ...pageTransition }}
-        initial="initial"
-        animate="in"
-        exit="out" > */}
-        <Component {...pageProps} />
-        {/* </motion.div> */}
-        {/* </AnimatePresence> */}
+        <AnimatePresence mode="wait" onExitComplete={onExitComplete}>
+					<motion.div
+						variants={pageVariants}
+						key={router?.asPath}
+						transition={{ ...pageTransition }}
+						initial="initial"
+						animate="in"
+						exit="out" 
+						>
+							<Component {...pageProps} />
+					</motion.div>
+        </AnimatePresence>
         <GlobalStyles />
         <Nav />
       </Store.Provider>

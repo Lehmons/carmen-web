@@ -24,6 +24,7 @@ const ProjectStyles = styled(motion.section)`
     `}
     ${media.tabletPortraitAndBelow`
       padding: 90px ${(props) => props.theme.sitePaddingLeftRightMobile};
+			padding-top: 40px;
     `}
     ${media.minDevicePixelRatio2`
       border-width: 0.5px;
