@@ -6,7 +6,7 @@ import SimpleBlockContent from "../../SimpleBlockContent";
 export default function SingleImage({ image, margin, size, caption }) {
   return (
     <SingleImageStyles
-      className={`single-image is-${size} ${margin ? "has-margin" : ""}`}
+      className={`single-image is-${size} ${margin ? "has-margin" : "no-margin"}`}
     >
       <ImageBlock
         title={image?.image?.alt}

@@ -47,6 +47,10 @@ const LightboxStyles = styled(motion.section)`
 			right: 25px;
 		`}
 	}
+
+	.each__slide {
+		margin-right: 10px;
+	}
 `;
 
 export default LightboxStyles;

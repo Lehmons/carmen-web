@@ -9,8 +9,8 @@ const HeroStyles = styled.section`
   display: grid;
 
   ${media.smallDesktopAndBelow`
-  width: 100%
-  grid-auto-rows: auto;
+  	width: 100%;
+  	grid-auto-rows: auto;
 	`}
   ${media.tabletPortraitAndBelow`
 `}
@@ -28,6 +28,11 @@ const HeroStyles = styled.section`
 			padding-left: ${props => props.theme.sitePaddingLeftRightDesktop};
 			padding-right: ${props => props.theme.sitePaddingLeftRightDesktop};
 		`}
+		${media.tabletPortraitAndBelow`
+			padding-left: ${props => props.theme.sitePaddingLeftRightMobile};
+			padding-right: ${props => props.theme.sitePaddingLeftRightMobile};
+			column-gap: 15px;
+		`}
   }
 
   .featuredGrid img {
@@ -41,6 +46,9 @@ const HeroStyles = styled.section`
     width: 100%;
 		${media.smallDesktopAndBelow`
 			padding-top: 72px;
+		`}
+		${media.tabletPortraitAndBelow`
+			padding-top: 60px;
 		`}
   }
 
@@ -56,8 +64,14 @@ const HeroStyles = styled.section`
   }
 
   .linebreaker {
-    padding-top: 3.5rem;
+    padding-top: 7.2rem;
     border-bottom: 1px solid black;
+		${media.smallDesktopAndBelow`
+			padding-top: 72px;
+		`}
+		${media.tabletPortraitAndBelow`
+			padding-top: 60px;
+		`}
     ${media.minDevicePixelRatio2`
       border-width: 0.5px;
     `}

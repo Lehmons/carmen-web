@@ -8,14 +8,13 @@ import { motion } from "framer-motion";
 
 const ProjectStyles = styled(motion.section)`
   padding-top: ${(props) => props.theme.sitePaddingTop};
-
   ${media.smallDesktopAndBelow`
-  width: 100%
-  padding-top: 8rem;
+  	width: 100%;
+  	padding-top: ${(props) => props.theme.sitePaddingTopDesktop};
 	`}
   ${media.tabletPortraitAndBelow`
-  padding-top: 80px;
-`}
+		padding-top: ${(props) => props.theme.sitePaddingTopMobile};
+	`}
 
   .description {
     padding: 13rem ${(props) => props.theme.sitePaddingLeftRight};

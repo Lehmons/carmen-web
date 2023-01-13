@@ -40,7 +40,9 @@ const NavStyled = styled.nav`
   a.is-active,
   a:active,
   a:hover {
-    text-decoration: underline;
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-underline-offset: 4px;
   }
 
   .logo {

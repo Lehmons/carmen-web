@@ -1,12 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SlideshowStyles from "./Slideshow.styled";
 import Image from '../Image';
 import Flickity from 'react-flickity-component'
 
 
 
-export default function Slideshow({ images, initialIndex = 0 }) {
+export default function Slideshow({ images, initialIndex = 0, onSettle }) {
 	const flickityRef = useRef();
+
+	useEffect(()=> {
+	 flickityRef?.current?.on('settle', function( index ) {
+		if(onSettle){
+			onSettle(index);
+		}
+	 });
+	}, []);
 
 	const prev = (e) => {
 		e?.preventDefault();
@@ -37,6 +45,12 @@ export default function Slideshow({ images, initialIndex = 0 }) {
 						reloadOnUpdate // default false
 						flickityRef={(e) => {
 							flickityRef.current = e;
+							flickityRef?.current?.on('settle', function( index ) {
+								console.log(index);
+								if(onSettle){
+									onSettle(index);
+								}
+							});
 						}}
 						>
 							{images.map((image, i) => {

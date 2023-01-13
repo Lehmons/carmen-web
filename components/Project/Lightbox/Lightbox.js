@@ -3,6 +3,7 @@ import LightboxStyles from "./Lightbox.styled";
 import dynamic from 'next/dynamic';
 import { AnimatePresence, motion } from "framer-motion";
 import useKeyPress from "~/lib/useKeyPress";
+import scrollToWithCb from "~/lib/Utils/scrollToWithCb";
 import Close from '../../Close';
 
 
@@ -33,6 +34,22 @@ export default function Lightbox({ images, activeIndex, setIsLightboxActive, isL
     }
   }, [escPress]);
 
+	const onSettle = async i => {
+		if(i === 0){ 
+			await scrollToWithCb({ top: 0, behavior: 'smooth' });
+			return;
+		}
+		const images = [...document?.querySelectorAll('.blocks img')];
+		const elem = images?.[i - 1];
+		if(!elem){
+			return;
+		}
+		const scrollY = window?.scrollY || 0;
+		const rect = elem?.getBoundingClientRect();
+		const top = rect?.top + scrollY;
+		await scrollToWithCb({ top, behavior: 'auto' });
+	};
+
 
 	if(!images){
 		return;
@@ -62,7 +79,7 @@ export default function Lightbox({ images, activeIndex, setIsLightboxActive, isL
             }}
           >
             <Close onClick={onClose} />
-            <Slideshow images={images} initialIndex={activeIndex}/>
+            <Slideshow images={images} initialIndex={activeIndex} onSettle={onSettle} />
           </motion.section>
           <section className="background" onClick={onClose} />
         </LightboxStyles>

@@ -20,7 +20,6 @@ export default function Page({
     initialData: data?.pageData,
     enabled: data?.preview,
   });
-  console.log(previewData);
 
   // 4. Return the correct component based on the docType
   return (

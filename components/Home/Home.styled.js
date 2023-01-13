@@ -10,12 +10,12 @@ import { motion } from "framer-motion";
 const HomeStyles = styled(motion.section)`
   padding-top: ${(props) => props.theme.sitePaddingTop};
   ${media.smallDesktopAndBelow`
-  width: 100%
-  padding-top: 8rem;
+  	width: 100%;
+  	padding-top: ${(props) => props.theme.sitePaddingTopDesktop};
 	`}
   ${media.tabletPortraitAndBelow`
-  padding-top: 80px;
-`}
+  	padding-top: ${(props) => props.theme.sitePaddingTopMobile}
+	`}
 
   .project-tile {
     width: 100%;
@@ -35,13 +35,20 @@ const HomeStyles = styled(motion.section)`
 
   .project-tile a {
     color: black;
-    padding-left: ${(props) => props.theme.sitePaddingLeftRight};
-    padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   }
 
+	.project-tile a,
   .blurb {
     padding-left: ${(props) => props.theme.sitePaddingLeftRight};
     padding-right: ${(props) => props.theme.sitePaddingLeftRight};
+		${media.smallDesktopAndBelow`
+			padding-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
+    	padding-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};
+		`}
+		${media.tabletPortraitAndBelow`
+			padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
+    	padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
+		`}
   }
 
   .project-tile img {

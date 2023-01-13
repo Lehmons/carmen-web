@@ -9,13 +9,13 @@ const theme = {
   baseline: 10,
   sitePaddingBottom: "12rem",
   sitePaddingBottomDesktop: "120px",
-  sitePaddingBottomMobile: "120px",
+  sitePaddingBottomMobile: "30px",
   sitePaddingLeftRight: "6.4rem",
   sitePaddingLeftRightDesktop: "60px",
   sitePaddingLeftRightMobile: "20px",
   sitePaddingTop: "9.2rem",
-  sitePaddingTopDesktop: "120px",
-  sitePaddingTopMobile: "48px",
+  sitePaddingTopDesktop: "92px",
+  sitePaddingTopMobile: "72px",
 };
 
 export default theme;

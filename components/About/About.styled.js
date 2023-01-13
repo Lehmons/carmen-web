@@ -13,7 +13,7 @@ const AboutStyles = styled(motion.section)`
   	margin-top: ${(props) => props.theme.sitePaddingTopDesktop};
 	`}
   ${media.tabletPortraitAndBelow`
-  	padding-top: 80px;
+		margin-top: ${props => props.theme.sitePaddingTopMobile};
 	`}  
 
   a {
@@ -108,9 +108,6 @@ const AboutStyles = styled(motion.section)`
   footer {
     padding-top: 24rem;
   }
-  ${media.smallDesktopAndBelow`
-      padding-top: 240px;
-    `}
 `;
 
 export default AboutStyles;

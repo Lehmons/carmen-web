@@ -43,17 +43,12 @@ export default function Project({
 		e?.preventDefault();
 		const nextActiveIndex = i + 1;
 		setActiveIndex(nextActiveIndex);
+		setIsLightboxActive(true);
 	}
 
 	useEffect(()=> {
 	 setupImages();
 	}, []);
-
-	useEffect(()=> {
-	 if(activeIndex !== undefined){
-		setIsLightboxActive(true);
-	 }
-	}, [activeIndex]);
 
   return (
     <ProjectStyles
