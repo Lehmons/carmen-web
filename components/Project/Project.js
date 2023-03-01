@@ -65,7 +65,7 @@ export default function Project({
       <Head>
         <title>{title ? title : "Project"} | Carmen Dowling</title>
       </Head>
-      <section className="featured-image" onClick={(e) => onImageClick(e, -1)}>
+      <section className="featured-image">
         <ImageBlock
           title={featuredImage?.image?.alt}
           text={featuredImage?.image?.alt}
