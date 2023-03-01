@@ -2,6 +2,8 @@ import Store from ".";
 
 const initialState = {
   isMenuOpen: false,
+	animatingProject: undefined,
+	isAnimating: false,
 };
 
 function useAppStore() {
@@ -12,11 +14,25 @@ function useAppStore() {
       draft.isMenuOpen = bool;
     });
   };
+  
+	const setAnimatingProject = (obj) => {
+    setState((draft) => {
+      draft.animatingProject = obj;
+    });
+  };
+
+	const setIsAnimating = (bool) => {
+    setState((draft) => {
+      draft.isAnimating = bool;
+    });
+  };
 
   return [
     state,
     {
       setIsMenuOpen,
+      setAnimatingProject,
+      setIsAnimating,
     },
   ];
 }

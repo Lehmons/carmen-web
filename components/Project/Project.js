@@ -40,12 +40,12 @@ export default function Project({
     setImages(arr);
   };
 
-  const onImageClick = (e, i) => {
-    e?.preventDefault();
-    const nextActiveIndex = i + 1;
-    setActiveIndex(nextActiveIndex);
-    setIsLightboxActive(true);
-  };
+  // const onImageClick = (e, i) => {
+  //   e?.preventDefault();
+  //   const nextActiveIndex = i + 1;
+  //   setActiveIndex(nextActiveIndex);
+  //   setIsLightboxActive(true);
+  // };
 
   useEffect(() => {
     setupImages();
@@ -89,7 +89,7 @@ export default function Project({
                 <ImageGrid
                   images={item?.images}
                   key={i}
-                  onClick={onImageClick}
+                  // onClick={onImageClick}
                   counter={i}
                 />
               </SectionFadeIn>
@@ -99,9 +99,9 @@ export default function Project({
             return (
               <SectionFadeIn
                 key={i}
-                onClick={(e) => {
-                  onImageClick(e, i);
-                }}
+                // onClick={(e) => {
+                //   onImageClick(e, i);
+                // }}
               >
                 <SingleImage
                   image={item?.image}

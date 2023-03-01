@@ -5,6 +5,7 @@ import theme from "../components/Styles/Theme";
 import "../components/Styles/FontFace.css";
 import Store from "../stores";
 import Nav from "../components/Nav";
+import Scaler from "../components/Scaler";
 import { initialState as appStore } from "../stores/AppStore";
 import GlobalStyles from "../components/Styles/GlobalStyles";
 import scrollToWithCb from "../lib/Utils/scrollToWithCb";
@@ -88,6 +89,7 @@ const MyApp = ({ Component, pageProps, router }) => {
         </AnimatePresence>
         <GlobalStyles />
         <Nav />
+        <Scaler />
       </Store.Provider>
     </ThemeWrapper>
   );

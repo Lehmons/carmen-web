@@ -71,6 +71,10 @@ const HomeStyles = styled(motion.section)`
       padding-left: 30px;
     `}
   }
+
+	&.is-animating {
+		opacity: 0;
+	}
 `;
 
 export default HomeStyles;

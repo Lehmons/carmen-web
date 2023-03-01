@@ -8,6 +8,7 @@ import SectionFadeIn from "../SectionFadeIn";
 import Link from "next/link";
 import Head from "next/head";
 // import { motion } from "framer-motion";
+import { useAppStore } from '~/stores/AppStore';
 
 export default function Home({
   pageTransition,
@@ -20,6 +21,25 @@ export default function Home({
   projects,
   heroText,
 }) {
+
+	const [{ isAnimating }, { setAnimatingProject }] = useAppStore();
+
+	const setupScaler = (e, project) => {
+		if(!project?.linkedPage?.featuredImage?.image || !project?.linkedPage?.slug){
+			return;
+		}
+		const rect = e?.target?.getBoundingClientRect();
+		if(!rect){
+			return;
+		}
+		e?.preventDefault(); 
+		setAnimatingProject({
+			image: project?.linkedPage?.featuredImage?.image,
+			slug: project?.linkedPage?.slug,
+			rect
+		});
+	};
+
   return (
     <HomeStyles
       key={"home"}
@@ -29,7 +49,7 @@ export default function Home({
       exit="out"
       variants={pageVariants}
       transition={pageTransition}
-      className="page home"
+      className={`page home ${isAnimating ?  'is-animating' : ''}`}
     >
       <Head>
         <title>Home | Carmen Dowling</title>
@@ -52,7 +72,7 @@ export default function Home({
                       href={`${project?.linkedPage?.slug?.current}`}
                       scroll={false}
                     >
-                      <a>{children}</a>
+                      <a onClick={e => { setupScaler(e, project); }}>{children}</a>
                     </Link>
                   )}
                 >
