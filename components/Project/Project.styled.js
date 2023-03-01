@@ -17,14 +17,15 @@ const ProjectStyles = styled(motion.section)`
 	`}
 
   .description {
-    padding: 13rem ${(props) => props.theme.sitePaddingLeftRight};
+    padding: 8rem ${(props) => props.theme.sitePaddingLeftRight};
     border-bottom: 1px solid black;
     ${media.smallDesktopAndBelow`
-      padding: 130px ${(props) => props.theme.sitePaddingLeftRightDesktop};
+      padding: 80px ${(props) => props.theme.sitePaddingLeftRightDesktop};
     `}
     ${media.tabletPortraitAndBelow`
-      padding: 90px ${(props) => props.theme.sitePaddingLeftRightMobile};
+      padding: ${(props) => props.theme.sitePaddingLeftRightMobile};
 			padding-top: 40px;
+      padding-bottom: 40px;
     `}
     ${media.minDevicePixelRatio2`
       border-width: 0.5px;
@@ -69,14 +70,14 @@ const ProjectStyles = styled(motion.section)`
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     padding: 9rem 0;
-    row-gap: 11rem;
+    row-gap: 8rem;
     ${media.smallDesktopAndBelow`
     padding: 90px 0;
-    row-gap: 110px;
+    row-gap: 80px;
     `}
     ${media.tabletPortraitAndBelow`
-    padding: 70px 0;
-    row-gap: 90px;
+    padding: 40px 0;
+    row-gap: 40px;
     `}
   }
 
@@ -98,9 +99,11 @@ const ProjectStyles = styled(motion.section)`
   }
 
   .credits {
+    padding-top: 3rem;
     padding-bottom: 3rem;
     ${media.smallDesktopAndBelow`
       padding-bottom: 30px;
+      padding-top: 30px;
     `}
   }
 

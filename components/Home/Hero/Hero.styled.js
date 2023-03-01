@@ -22,15 +22,7 @@ const HeroStyles = styled.section`
     width: 100%;
     height: 100%;
     max-width: 640rem;
-		padding-left: ${props => props.theme.sitePaddingLeftRight};
-		padding-right: ${props => props.theme.sitePaddingLeftRight};
-		${media.smallDesktopAndBelow`
-			padding-left: ${props => props.theme.sitePaddingLeftRightDesktop};
-			padding-right: ${props => props.theme.sitePaddingLeftRightDesktop};
-		`}
-		${media.tabletPortraitAndBelow`
-			padding-left: ${props => props.theme.sitePaddingLeftRightMobile};
-			padding-right: ${props => props.theme.sitePaddingLeftRightMobile};
+    ${media.tabletPortraitAndBelow`
 			column-gap: 15px;
 		`}
   }
@@ -44,10 +36,10 @@ const HeroStyles = styled.section`
   .blurb {
     padding-top: 7.2rem;
     width: 100%;
-		${media.smallDesktopAndBelow`
+    ${media.smallDesktopAndBelow`
 			padding-top: 72px;
 		`}
-		${media.tabletPortraitAndBelow`
+    ${media.tabletPortraitAndBelow`
 			padding-top: 60px;
 		`}
   }
@@ -66,10 +58,10 @@ const HeroStyles = styled.section`
   .linebreaker {
     padding-top: 7.2rem;
     border-bottom: 1px solid black;
-		${media.smallDesktopAndBelow`
+    ${media.smallDesktopAndBelow`
 			padding-top: 72px;
 		`}
-		${media.tabletPortraitAndBelow`
+    ${media.tabletPortraitAndBelow`
 			padding-top: 60px;
 		`}
     ${media.minDevicePixelRatio2`

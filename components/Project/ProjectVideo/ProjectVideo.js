@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import ProjectVideoStyled from "./ProjectVideo.styled";
-import VideoMp4 from "~/components/VideoMp4";
+import MuxPlayer from "@mux/mux-player-react";
 
 export default function ProjectVideo({ video }) {
   return (
     <ProjectVideoStyled>
-      <VideoMp4
-        asset={video?.asset}
+      <MuxPlayer
+        playbackId={video?.asset?.playbackId}
+        controls={false}
+        autoPlay={true}
         loop={true}
         muted={true}
-        autoplay={true}
-        playsinline={true}
+        stream-type={"on-demand"}
+        metadata={{
+          video_title: "video",
+          video_id: video?.asset?.data?.id,
+        }}
       />
     </ProjectVideoStyled>
   );

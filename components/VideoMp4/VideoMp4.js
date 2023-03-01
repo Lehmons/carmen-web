@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import VideoMp4Styles from "./VideoMp4.styled";
 import { useInView } from "react-intersection-observer";
 import useWindowSize from "~/lib/useWindowSize";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 export default React.memo(function VideoMp4({
   autoplay = true,
@@ -18,9 +18,8 @@ export default React.memo(function VideoMp4({
   onMetaDataLoaded,
   onPan,
   onPlay,
-  onPause
+  onPause,
 }) {
-
   const isMountedRef = useRef(null);
   const { viewportW } = useWindowSize();
   const [isLowPowerMode, setIsLowPowerMode] = useState(false);
@@ -185,17 +184,12 @@ export default React.memo(function VideoMp4({
       ref={container}
       className={`${className} video-container ${
         isDataLoaded ? "is-data-loaded" : "is-not-data-loaded"
-      } ${
-        isLowPowerMode ? "is-low-power-mode" : "is-not-low-power-mode"
-      }`}
+      } ${isLowPowerMode ? "is-low-power-mode" : "is-not-low-power-mode"}`}
       style={style}
     >
-      <motion.section
-        onPan={onPan}
-        ref={ref}
-      >
+      <motion.section onPan={onPan} ref={ref}>
         <video
-          className={`${className || ''}`}
+          className={`${className || ""}`}
           onClick={handleVideoClick}
           controls={showControls}
           playsInline={playsinline}
@@ -203,10 +197,15 @@ export default React.memo(function VideoMp4({
           autoPlay={autoplay}
           poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           ref={video}
-          src={`https://stream.mux.com/${asset?.data?.playback_ids?.[0]?.id}/medium.mp4`}
+          src={`https://stream.mux.com/${asset?.data?.playback_ids?.[0]?.id}/medium.mp4`} // we can lso
           loop={loop}
         ></video>
-        {asset?.data?.playback_ids?.[0]?.id ? <img src={`https://image.mux.com/${asset?.data?.playback_ids?.[0]?.id}/thumbnail.jpg?time=0`} alt="loading" /> : null}
+        {asset?.data?.playback_ids?.[0]?.id ? (
+          <img
+            src={`https://image.mux.com/${asset?.data?.playback_ids?.[0]?.id}/thumbnail.jpg?time=0`}
+            alt="loading"
+          />
+        ) : null}
       </motion.section>
     </VideoMp4Styles>
   );

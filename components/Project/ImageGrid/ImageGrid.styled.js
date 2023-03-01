@@ -13,8 +13,8 @@ const ImageGridStyles = styled.section`
   padding-left: ${(props) => props.theme.sitePaddingLeftRight};
   padding-right: ${(props) => props.theme.sitePaddingLeftRight};
   ${media.smallDesktopAndBelow`
-    row-gap: 50px;
-    column-gap: 50px;
+    row-gap: 48px;
+    column-gap: 48px;
     padding-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
     padding-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};
     `}

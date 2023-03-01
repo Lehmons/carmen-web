@@ -17,7 +17,6 @@ const SingleImageStyles = styled.section`
     `}
   }
 
-
   &.is-small {
     max-width: 63rem;
     ${media.smallDesktopAndBelow`
@@ -49,84 +48,74 @@ const SingleImageStyles = styled.section`
     border-radius: 20px;
   }
 
-	&.is-large img {
-		border-radius: initial;
-	}
+  &.is-large img {
+    border-radius: initial;
+  }
 
-	&.is-large .caption {
-		max-width: 131.2rem;
-		${media.smallDesktopAndBelow`
+  &.is-large .caption {
+    max-width: 131.2rem;
+    ${media.smallDesktopAndBelow`
 			max-width: 1312px;
 		`}
-	}
+  }
 
-	&.is-medium .caption {
-		max-width: 108.4rem;
-		${media.smallDesktopAndBelow`
+  &.is-medium .caption {
+    max-width: 108.4rem;
+    ${media.smallDesktopAndBelow`
 			max-width: 1084px;
 			padding-top: 48px;
 		`}
-	}
+  }
 
-	&.is-small .caption {
-		max-width: 85.8rem;
-		${media.smallDesktopAndBelow`
+  &.is-small .caption {
+    max-width: 85.8rem;
+    ${media.smallDesktopAndBelow`
 			max-width: 858px;
 		`}
-	}
+  }
 
-	&.is-medium .caption,
-	&.is-large .caption {
-		padding-top: 4.8rem;
-		${media.smallDesktopAndBelow`
-			padding-top: 48px;
+  &.is-medium .caption,
+  &.is-large .caption {
+    padding-top: 8.2rem;
+    ${media.smallDesktopAndBelow`
+			padding-top: 82px;
 		`}
-	}
+  }
 
-	&.is-large .caption{
-		padding-top: 12rem;
-		${media.smallDesktopAndBelow`
-			padding-top: 120px;
-		`}
-		${media.tabletPortraitAndBelow`
-			padding-top: 80px;
-		`}
-	}
-
-	&.is-large .caption p {
-		font-size: ${font.h3};
-		font-family: ${font.family200};
-		line-height: ${font.titleLineHeight};
-		${media.smallDesktopAndBelow`
+  &.is-large .caption p {
+    font-size: ${font.h3};
+    font-family: ${font.family200};
+    line-height: ${font.titleLineHeight};
+    ${media.smallDesktopAndBelow`
 			font-size: ${font.h3Tablet};
 		`}
-		${media.tabletPortraitAndBelow`
+    ${media.tabletPortraitAndBelow`
 			font-size: ${font.h3Mobile};
 		`}
-	}
+  }
 
-	&.is-small .caption p{
-		max-width: 85.8rem;
-		${media.smallDesktopAndBelow`
+  &.is-small .caption p {
+    max-width: 85.8rem;
+    ${media.smallDesktopAndBelow`
 			max-width: 858px;
 		`}
-	}
+  }
 
-	.caption {
-		margin-left: auto;
-		margin-right: auto;
-	}
+  .caption {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-	&.no-margin .caption {
-		${media.tabletLandscapeAndBelow`
+  &.no-margin .caption {
+    ${media.tabletLandscapeAndBelow`
 			padding-left: ${(props) => props.theme.sitePaddingLeftRightDesktop};
 			padding-right: ${(props) => props.theme.sitePaddingLeftRightDesktop};
 		`}
-		${media.tabletPortraitAndBelow`
+    ${media.tabletPortraitAndBelow`
 			padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
 			padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
 		`}
-	}
+  }
 `;
 
 export default SingleImageStyles;

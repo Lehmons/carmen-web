@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mux/mux-player-react": "^1.8.0",
     "@sanity/block-content-to-react": "^2.0.7",
     "dayjs": "^1.11.6",
     "file-loader": "^6.2.0",

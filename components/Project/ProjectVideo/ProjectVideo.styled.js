@@ -9,8 +9,8 @@ const ProjectVideoStyles = styled.section`
   width: 100%;
   height: 100%;
   margin-top: 8rem;
-  padding-left: ${(props) => props.theme.sitePaddingLeftRight};
-  padding-right: ${(props) => props.theme.sitePaddingLeftRight};
+  /* padding-left: ${(props) => props.theme.sitePaddingLeftRight};
+  padding-right: ${(props) => props.theme.sitePaddingLeftRight}; */
   display: flex;
   position: relative;
   ${media.smallDesktopAndBelow`

@@ -23,9 +23,9 @@ const VideoStyles = styled.section`
     display: none;
   }
 
-  &.is-not-data-loaded {
+  /* &.is-not-data-loaded {
     display: none;
-  }
+  } */
 
   &.is-data-loaded,
   &.is-low-power-mode {

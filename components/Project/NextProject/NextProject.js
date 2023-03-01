@@ -50,6 +50,12 @@ export default function NextProject({ _id }) {
 
   return (
     <NextProjectStyles>
+      <section class="another-project">
+        <p>
+          Another project
+          <ArrowRight />
+        </p>
+      </section>
       <section>
         {data[0] && data[0]?.slug?.current && (
           <Link href={data[0]?.slug?.current} scroll={false}>
@@ -86,5 +92,5 @@ export default function NextProject({ _id }) {
 
 // export SVG Can't take her design
 // outside section
-// make sextion 2 collumn
+// make section 2 collumn
 // padding top and bottom
