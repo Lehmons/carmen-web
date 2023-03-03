@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 
 const HomeStyles = styled(motion.section)`
   padding-top: ${(props) => props.theme.sitePaddingTop};
+	transition: opacity 0.1s ease-in-out;
   ${media.smallDesktopAndBelow`
   	width: 100%;
   	padding-top: ${(props) => props.theme.sitePaddingTopDesktop};
@@ -56,9 +57,9 @@ const HomeStyles = styled(motion.section)`
   }
 
   .project-tile .image-wrapper {
-    padding-top: 4rem;
+    margin-top: 4rem;
 		${media.smallDesktopAndBelow`
-			padding-top: 40px;
+			margin-top: 40px;
 		`}
   }
 

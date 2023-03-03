@@ -25,6 +25,7 @@ export default function Scaler() {
 			left: animatingProject?.rect?.left,
 			width: animatingProject?.rect?.width,
 			height: animatingProject?.rect?.height,
+			borderRadius: 20
 		});
 	};
 
@@ -36,7 +37,7 @@ export default function Scaler() {
 		if(viewportW > 768){
 			return paddingTops?.desktop;
 		}
-		paddingTops?.mobile;
+		return paddingTops?.mobile;
 	}
 
   const animate = () => {
@@ -48,9 +49,10 @@ export default function Scaler() {
 				top,
 				width: viewportW,
 				height,
+				borderRadius: 0,
 				transition: { 
 					type: 'linear', 
-					duration: 0.3
+					duration: 0.5
 				}, 
 			});
 	};
@@ -66,15 +68,14 @@ export default function Scaler() {
 	};
 	
 	const onAnimationComplete = () => {
-		
 	};
 
 	useEffect(()=> {
-	 if(animatingProject){
+	 if(animatingProject && viewportW){
 		setup();
 		animate();
 	 }
-	}, [animatingProject]);
+	}, [animatingProject, viewportW]);
 
 	const onRouteComplete = () => {
 		if(!animatingProject){
@@ -84,6 +85,9 @@ export default function Scaler() {
 		timer.current = setTimeout(() => {
 			setAnimatingProject();
 			setIsAnimating(false);
+			if(viewportW < 768){
+				return;
+			}
 			scrollToWithCb({ top: 100, behavior: 'smooth'});
 		}, 1000);
 	}
