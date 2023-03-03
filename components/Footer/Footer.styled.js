@@ -18,7 +18,7 @@ const FooterStyles = styled.footer`
     flex-direction: column-reverse;
   `}
   ${media.tabletPortraitAndBelow`
-      padding: 20px 0;
+      padding: 50px 0 20px 0;
       padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
       padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
   `}

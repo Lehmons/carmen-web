@@ -24,10 +24,14 @@ const AboutStyles = styled(motion.section)`
     width: 100%;
     padding-top: 4.3rem;
     padding-bottom: 5rem;
+		${media.smallDesktopAndBelow`
+			padding-top: 43px;
+			padding-bottom: 50px;
+		`}
     ${media.tabletPortraitAndBelow`
-      padding-top: 43px;
+      padding-top: 20px;
       padding-bottom: 50px;
-  `}
+  	`}
   }
 
   .heroText,
