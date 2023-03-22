@@ -28,6 +28,10 @@ const ProjectVideoStyles = styled.section`
     object-fit: cover;
   }
 
+	mux-player {
+		--controls: none;
+	}
+
   ${media.tabletLandscapeAndBelow`
     margin-top: 60px;
     padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};

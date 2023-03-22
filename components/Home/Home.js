@@ -24,22 +24,6 @@ export default function Home({
 
 	const [{ isAnimating }, { setAnimatingProject }] = useAppStore();
 
-	const setupScaler = (e, project) => {
-		if(!project?.linkedPage?.featuredImage?.image || !project?.linkedPage?.slug){
-			return;
-		}
-		const rect = e?.target?.getBoundingClientRect();
-		if(!rect){
-			return;
-		}
-		e?.preventDefault(); 
-		setAnimatingProject({
-			image: project?.linkedPage?.featuredImage?.image,
-			slug: project?.linkedPage?.slug,
-			rect
-		});
-	};
-
   return (
     <HomeStyles
       key={"home"}
@@ -72,7 +56,7 @@ export default function Home({
                       href={`${project?.linkedPage?.slug?.current}`}
                       scroll={false}
                     >
-                      <a onClick={e => { setupScaler(e, project); }}>{children}</a>
+                      <a>{children}</a>
                     </Link>
                   )}
                 >

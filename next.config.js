@@ -8,6 +8,9 @@ module.exports = {
     NEXT_PUBLIC_GOOGLE_ANALYTICS: "",
     NEXT_PUBLIC_SANITY_PROJECT_ID,
     NEXT_PUBLIC_SANITY_DATASET,
+		thumbSize: 1200,
+    desktopSize: 2000,
+    portraitRatio: 1.33,
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find(
