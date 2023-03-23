@@ -28,12 +28,12 @@ const ProjectVideoStyles = styled.section`
     object-fit: cover;
   }
 
-	mux-player {
-		--controls: none;
-	}
+  mux-player {
+    --controls: none;
+  }
 
   ${media.tabletLandscapeAndBelow`
-    margin-top: 60px;
+    margin-top: 0px;
     padding-left: ${(props) => props.theme.sitePaddingLeftRightMobile};
     padding-right: ${(props) => props.theme.sitePaddingLeftRightMobile};
     `}

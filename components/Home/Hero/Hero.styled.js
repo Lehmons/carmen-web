@@ -23,7 +23,7 @@ const HeroStyles = styled.section`
     height: 100%;
     max-width: 640rem;
     ${media.tabletPortraitAndBelow`
-			column-gap: 15px;
+			column-gap: 9px;
 		`}
   }
 
